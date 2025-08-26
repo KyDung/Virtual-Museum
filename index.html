@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bảo Tàng AI - 80 Năm Cách Mạng Tháng Tám</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-university"></i>
+          <span>Bảo Tàng AI</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Trang Chủ</a></li>
+          <li><a href="#gallery" class="nav-link">Triển Lãm</a></li>
+          <li><a href="#video" class="nav-link">Phòng Chiếu</a></li>
+          <li><a href="#audio" class="nav-link">Âm Thanh</a></li>
+          <li><a href="#infographic" class="nav-link">Infographic</a></li>
+          <li><a href="#library" class="nav-link">Thư Viện</a></li>
+        </ul>
+        <div class="nav-controls">
+          <button id="langToggle" class="btn-control">
+            <i class="fas fa-language"></i>
+          </button>
+          <button id="themeToggle" class="btn-control">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+      <div class="hero-banner">
+        <div class="hero-content">
+          <h1 class="hero-title">80 Năm Cách Mạng Tháng Tám</h1>
+          <p class="hero-subtitle">Lịch sử trong kỷ nguyên số</p>
+          <p class="hero-description">
+            Khám phá lịch sử vẻ vang của dân tộc Việt Nam qua những tác phẩm
+            nghệ thuật AI độc đáo
+          </p>
+          <button class="btn-primary" onclick="startTour()">
+            <i class="fas fa-play"></i>
+            Bắt Đầu Tham Quan
+          </button>
+        </div>
+        <div class="hero-image">
+          <img src="./Banner1.png" alt="Cách mạng Tháng Tám" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <h2 class="section-title">Khu Vực Triển Lãm</h2>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Tất Cả</button>
+          <button class="filter-btn" data-filter="characters">Nhân Vật</button>
+          <button class="filter-btn" data-filter="events">Sự Kiện</button>
+          <button class="filter-btn" data-filter="symbols">Biểu Tượng</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Artworks will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="section video-section">
+      <div class="container">
+        <h2 class="section-title">Phòng Chiếu</h2>
+        <div class="video-container">
+          <div class="video-player">
+            <img
+              src="/placeholder.svg?height=400&width=700"
+              alt="Video Cách mạng Tháng Tám"
+            />
+            <div class="video-overlay">
+              <button class="play-btn" onclick="playVideo()">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+          </div>
+          <div class="video-info">
+            <h3>Diễn Biến Cách Mạng Tháng Tám</h3>
+            <p>
+              Tái hiện lại những khoảnh khắc lịch sử quan trọng của cuộc Tổng
+              khởi nghĩa giành chính quyền năm 1945
+            </p>
+            <div class="video-controls">
+              <button class="btn-secondary">
+                <i class="fas fa-closed-captioning"></i>
+                Phụ Đề
+              </button>
+              <button class="btn-secondary">
+                <i class="fas fa-share"></i>
+                Chia Sẻ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audio Section -->
+    <section id="audio" class="section audio-section">
+      <div class="container">
+        <h2 class="section-title">Phòng Âm Thanh</h2>
+        <div class="audio-grid">
+          <div class="audio-card">
+            <div class="audio-icon">
+              <i class="fas fa-microphone"></i>
+            </div>
+            <h3>Tuyên Ngôn Độc Lập</h3>
+            <p>Nghe lại bản Tuyên ngôn Độc lập lịch sử ngày 2/9/1945</p>
+            <div class="audio-controls">
+              <button class="play-audio-btn" data-audio="independence">
+                <i class="fas fa-play"></i>
+              </button>
+              <span class="audio-duration">5:30</span>
+            </div>
+          </div>
+
+          <div class="audio-card">
+            <div class="audio-icon">
+              <i class="fas fa-volume-up"></i>
+            </div>
+            <h3>Lời Kêu Gọi Khởi Nghĩa</h3>
+            <p>Những lời kêu gọi khởi nghĩa của các nhà cách mạng</p>
+            <div class="audio-controls">
+              <button class="play-audio-btn" data-audio="uprising">
+                <i class="fas fa-play"></i>
+              </button>
+              <span class="audio-duration">3:45</span>
+            </div>
+          </div>
+
+          <div class="audio-card">
+            <div class="audio-icon">
+              <i class="fas fa-music"></i>
+            </div>
+            <h3>Nhạc Cách Mạng</h3>
+            <p>Những bản nhạc cách mạng bất hủ của thời kỳ</p>
+            <div class="audio-controls">
+              <button class="play-audio-btn" data-audio="music">
+                <i class="fas fa-play"></i>
+              </button>
+              <span class="audio-duration">4:20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infographic Section -->
+    <section id="infographic" class="section infographic-section">
+      <div class="container">
+        <h2 class="section-title">Timeline Tương Tác</h2>
+        <div class="timeline-container">
+          <div class="timeline" id="timeline">
+            <!-- Timeline events will be loaded here -->
+          </div>
+        </div>
+
+        <div class="map-section">
+          <h3>Bản Đồ Khởi Nghĩa 1945</h3>
+          <div class="vietnam-map">
+            <img
+              src="/placeholder.svg?height=500&width=400"
+              alt="Bản đồ khởi nghĩa"
+            />
+            <div class="map-markers">
+              <div
+                class="marker"
+                data-location="hanoi"
+                style="top: 20%; left: 45%"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div
+                class="marker"
+                data-location="hue"
+                style="top: 40%; left: 50%"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div
+                class="marker"
+                data-location="saigon"
+                style="top: 80%; left: 45%"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Library Section -->
+    <section id="library" class="section library-section">
+      <div class="container">
+        <h2 class="section-title">Thư Viện Tư Liệu</h2>
+        <div class="library-grid">
+          <div class="document-card">
+            <div class="document-image">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Tư liệu lịch sử"
+              />
+            </div>
+            <div class="document-info">
+              <h3>Tuyên Ngôn Độc Lập</h3>
+              <p>Bản gốc Tuyên ngôn Độc lập do Chủ tịch Hồ Chí Minh đọc</p>
+              <button class="btn-view">Xem Chi Tiết</button>
+            </div>
+          </div>
+
+          <div class="document-card">
+            <div class="document-image">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Ảnh lịch sử"
+              />
+            </div>
+            <div class="document-info">
+              <h3>Ảnh Khởi Nghĩa</h3>
+              <p>Những hình ảnh quý giá về cuộc Tổng khởi nghĩa</p>
+              <button class="btn-view">Xem Chi Tiết</button>
+            </div>
+          </div>
+
+          <div class="document-card">
+            <div class="document-image">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Báo chí cách mạng"
+              />
+            </div>
+            <div class="document-info">
+              <h3>Báo Chí Cách Mạng</h3>
+              <p>Các tờ báo và truyền đơn thời kỳ cách mạng</p>
+              <button class="btn-view">Xem Chi Tiết</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Kiểm Tra Kiến Thức</h2>
+        <div id="quizContent">
+          <!-- Quiz content will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Artwork Modal -->
+    <div id="artworkModal" class="modal">
+      <div class="modal-content artwork-modal">
+        <span class="close">&times;</span>
+        <div class="artwork-detail">
+          <div class="artwork-image">
+            <img id="modalArtworkImage" src="/placeholder.svg" alt="" />
+          </div>
+          <div class="artwork-info">
+            <h2 id="modalArtworkTitle"></h2>
+            <p id="modalArtworkDescription"></p>
+            <div class="artwork-controls">
+              <button class="btn-primary" onclick="playNarration()">
+                <i class="fas fa-volume-up"></i>
+                Nghe Thuyết Minh
+              </button>
+              <button class="btn-secondary" onclick="shareArtwork()">
+                <i class="fas fa-share"></i>
+                Chia Sẻ
+              </button>
+              <button class="btn-secondary" onclick="startQuiz()">
+                <i class="fas fa-question-circle"></i>
+                Quiz
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
